@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class ControllerItems extends Controller
 {
-    //
+    public function ViewList()
+    {
+      
+    }
 }

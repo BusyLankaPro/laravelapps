@@ -15,3 +15,9 @@ Route::get('/', 'PageControll@getLogin' );
 Route::get('/Home', 'PageControll@getHome' );
 Route::get('/Branches', 'ControllerBranches@ViewList' );
 Route::post('/Branches/submit', 'ControllerBranches@Submit' );
+
+
+// Items main nav touring
+
+Route::post('/ItemsMainGroup/submit', 'ControllerItemMainGroup@submit' );
+Route::get('/ItemsMainGroup', 'ControllerItemMainGroup@ViewList' );

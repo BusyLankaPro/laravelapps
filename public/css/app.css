@@ -10420,6 +10420,11 @@ a.text-dark:focus {
   margin-bottom: 10px;
 }
 
+.mySelectedIDBox {
+  width: 50px;
+  float: right;
+}
+
 /* Extra small devices (phones, 600px and down) */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
