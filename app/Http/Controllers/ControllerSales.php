@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class ControllerSales extends Controller
 {
+<<<<<<< HEAD
     public function AddSales(Request $request)
     {
     	//echo "string";
@@ -14,4 +15,7 @@ class ControllerSales extends Controller
     	
     }
    
+=======
+
+>>>>>>> 9a7260f14a7bd8e7c7d9ea57bb20d06d98be72d3
 }

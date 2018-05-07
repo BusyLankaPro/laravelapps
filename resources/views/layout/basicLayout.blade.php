@@ -33,8 +33,8 @@
 			<li class="nav-item {{Request::is('HR')? 'active' : '' }}">
 				<a class="nav-link" href="HR">HR</a>
 			</li>
-			<li class="nav-item {{Request::is('Items')? 'active' : '' }}">
-				<a class="nav-link" href="Items">Items</a>
+			<li class="nav-item {{Request::is('ItemsMainGroup')? 'active' : '' }}">
+				<a class="nav-link" href="ItemsMainGroup">Items</a>
 			</li>
 			<li class="nav-item {{Request::is('Purchase')? 'active' : '' }}">
 				<a class="nav-link" href="Purchase">Purchase</a>

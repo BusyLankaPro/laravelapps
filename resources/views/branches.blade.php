@@ -33,7 +33,6 @@
   {!! Form::close() !!}
 
 
-
   <table id="loadTable" class="table table-bordered" style=" margin-bottom: 40px;">
     <thead>
       <tr>
@@ -65,6 +64,13 @@
 
   <script type="text/javascript">
     $('#loadTable').DataTable();
+
+    $('#loadTable').click(function(){
+      var id = $(this).children('tr td:eq(0)').text;
+      alert(id);
+    })
+
+
   </script>
 
 @endsection
