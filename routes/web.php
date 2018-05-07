@@ -15,3 +15,8 @@ Route::get('/', 'PageControll@getLogin' );
 Route::get('/Home', 'PageControll@getHome' );
 Route::get('/Branches', 'ControllerBranches@ViewList' );
 Route::post('/Branches/submit', 'ControllerBranches@Submit' );
+
+//sales routes
+Route::get('/Sales', 'ControllerSales@AddSales' );
+Route::get('/Sales-list','ControllerSalesList@ViewList');
+Route::get('/Sales-return','ControllerSalesReturn@ViewSalesReturn');
