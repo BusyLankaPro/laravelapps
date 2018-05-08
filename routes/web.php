@@ -15,3 +15,15 @@ Route::get('/', 'PageControll@getLogin' );
 Route::get('/Home', 'PageControll@getHome' );
 Route::get('/Branches', 'ControllerBranches@ViewList' );
 Route::post('/Branches/submit', 'ControllerBranches@Submit' );
+
+
+//Purchase
+Route::get('/Purchase', function () {
+    return view('Purchase');
+});
+
+//purchase routes
+Route::get('/Purchase-Payment','ControllerPurchasePayment@AddPurchasePayment');
+Route::get('/Purches-return', 'ControllerPurchaseReturn@AddPurchaseReturn');
+Route::get('/Purchase-Item','ControllerPurchaseItemList@AddPurchaseItem');
+
