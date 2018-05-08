@@ -16,11 +16,26 @@
     Sales List
   </div>
   <div class="card-body">
-  
-  {{ Form::text('sales_id', '', [ 'class' => 'form-control  col-lg-1 myFormControll','readonly', 'placeholder' => 'SalesID' ]) }}
-  {{ Form::text('sales_id', '', [ 'class' => 'form-control  col-lg-11 myFormControll', 'placeholder' => 'SalesID' ]) }}
-  {{ Form::text('items_id', '', [ 'class' => 'form-control  col-lg-1 myFormControll','readonly', 'placeholder' => 'ItemsID' ]) }}
-  {{ Form::text('items', '', [ 'class' => 'form-control  col-lg-11 myFormControll', 'placeholder' => 'ItemsID' ]) }}
+  <div class="form-row">
+    <div class="col-md-1">
+   {{ Form::text('sales_id', '', [ 'class' => 'form-control  myFormControll','readonly', 'placeholder' => 'SalesID' ]) }}
+    </div>
+  </div>
+    <div class="form-row">
+    <div class="col-md-11">
+    {{ Form::text('sales_id', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'SalesID' ]) }}
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-1">
+  {{ Form::text('items_id', '', [ 'class' => 'form-control myFormControll','readonly', 'placeholder' => 'ItemsID' ]) }}
+</div>
+</div>
+<div class="form-row">
+    <div class="col-md-11">
+  {{ Form::text('items', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'ItemsID' ]) }}
+</div>
+</div>
 
     @include('layout.messages')
 
