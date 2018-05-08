@@ -69,9 +69,16 @@ class ControllerItemMainGroup extends Controller
 
 
   }
-    public function ViewList()
-    {
-      $item_main_groupsObj = item_main_groups::all();
-      return view('ItemMainGroup')->with( 'myList' , $item_main_groupsObj );
-    }
+  public function ViewList()
+  {
+    $item_main_groupsObj = item_main_groups::all();
+    return view('ItemMainGroup')->with( 'myList' , $item_main_groupsObj );
+  }
+  public function ViewListJSON()
+  {
+    return response()->json(item_main_groups::all());
+  }
+
+
+
 }

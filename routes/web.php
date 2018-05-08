@@ -27,3 +27,6 @@ Route::get('/Sales-return','ControllerSalesReturn@ViewSalesReturn');
 Route::post('/ItemsMainGroup/submit', 'ControllerItemMainGroup@submit' );
 Route::get('/ItemsMainGroup', 'ControllerItemMainGroup@ViewList' );
 
+Route::post('/ItemsMainGroupJSON', 'ControllerItemMainGroup@ViewListJSON' );
+Route::get('/ItemsSubGroup', 'ControllerItemSubGroup@ViewList' );
+Route::post('/ItemsSubGroup/submit', 'ControllerItemSubGroup@submit' );
