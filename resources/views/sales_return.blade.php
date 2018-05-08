@@ -18,10 +18,16 @@
   <div class="card-body">
 
   {{ Form::text('return_note', '', [ 'class' => 'form-control myFormControll myTextBox', 'placeholder' => 'Return Note Here' ]) }}
-  {{ Form::number('quantity', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'Quantity' ]) }}  
-  {{ Form::text('sales', '', [ 'class' => 'form-control  col-lg-1 myFormControll','readonly', 'placeholder' => 'SID' ]) }}
-  {{ Form::text('sales', '', [ 'class' => 'form-control  col-lg-11 myFormControll', 'placeholder' => 'SID' ]) }}
-  
+  {{ Form::text('quantity', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'Quantity' ]) }}  
+  <div class="form-row">
+    <div class="col-md-1">
+    {{ Form::text('sales', '', [ 'class' => 'form-control   myFormControll','readonly', 'placeholder' => 'SID' ]) }}
+    </div>
+    
+    <div class="col-md-11">
+    {{ Form::text('sales', '', [ 'class' => 'form-control   myFormControll', 'placeholder' => 'SID' ]) }}
+    </div>
+  </div>
 
     @include('layout.messages')
 
@@ -30,6 +36,7 @@
   {{ Form::submit('Save' , [ 'class' => 'btn btn-primary','disabled']) }}
   {{ Form::submit('Update' , [ 'class' => 'btn btn-primary', 'disabled']) }}
   {{ Form::submit('Delete' , [ 'class' => 'btn btn-primary', 'disabled']) }}
+  {{ Form::text('IDBox', '', [ 'id'=> 'IDBox','class' => 'form-control mySelectedIDBox', 'readonly' ]) }}
   </div>
 </div>
   {!! Form::close() !!}

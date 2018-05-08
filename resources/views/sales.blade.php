@@ -18,10 +18,23 @@
   <div class="card-body">
 
   {{ Form::text('amount', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'Sales Amount' ]) }}
-  {{ Form::text('payment_type', '', [ 'class' => 'form-control  col-lg-1 myFormControll','readonly', 'placeholder' => 'PID' ]) }}  
-  {{ Form::text('payment_type', '', [ 'class' => 'form-control col-lg-11 myFormControll', 'placeholder' => 'PaymentType']) }}  
-  {{ Form::text('branch', '', [ 'class' => 'form-control  col-lg-1 myFormControll','readonly', 'placeholder' => 'BID' ]) }}
-  {{ Form::text('branch', '', [ 'class' => 'form-control  col-lg-11 myFormControll', 'placeholder' => 'Branch' ]) }}
+  <div class="form-row">
+    <div class="col-md-1">
+        {{ Form::text('payment_type', '', [ 'class' => 'form-control  myFormControll','readonly', 'placeholder' => 'PID' ]) }}  
+    </div>
+    <div class="col-md-11">
+      {{ Form::text('payment_type', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'PaymentType']) }}  
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-1"> 
+    {{ Form::text('branch', '', [ 'class' => 'form-control myFormControll','readonly', 'placeholder' => 'BID' ]) }}
+    </div>
+    <div class="col-lg-11">
+    {{ Form::text('branch', '', [ 'class' => 'form-control  myFormControll', 'placeholder' => 'Branch' ]) }}
+    </div>
+  </div>
   {{ Form::date('date', '', [ 'class' => 'form-control myFormControll ', 'placeholder' => 'Select Date' ]) }}
 
     @include('layout.messages')
@@ -31,6 +44,7 @@
   {{ Form::submit('Save' , [ 'class' => 'btn btn-primary','disabled']) }}
   {{ Form::submit('Update' , [ 'class' => 'btn btn-primary', 'disabled']) }}
   {{ Form::submit('Delete' , [ 'class' => 'btn btn-primary', 'disabled']) }}
+  {{ Form::text('IDBox', '', [ 'id'=> 'IDBox','class' => 'form-control mySelectedIDBox', 'readonly' ]) }}
   </div>
 </div>
   {!! Form::close() !!}
