@@ -20,6 +20,10 @@
     <div class="col-md-1">
    {{ Form::text('sales_id', '', [ 'class' => 'form-control  myFormControll','readonly', 'placeholder' => 'SalesID' ]) }}
     </div>
+
+  </div>
+    <div class="form-row">
+
     <div class="col-md-11">
     {{ Form::text('sales_id', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'SalesID' ]) }}
     </div>
@@ -27,11 +31,21 @@
   <div class="form-row">
     <div class="col-md-1">
   {{ Form::text('items_id', '', [ 'class' => 'form-control myFormControll','readonly', 'placeholder' => 'ItemsID' ]) }}
+
     </div>
     <div class="col-md-11">
   {{ Form::text('items', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'ItemsID' ]) }}
     </div>
   </div>
+
+</div>
+</div>
+<div class="form-row">
+    <div class="col-md-11">
+  {{ Form::text('items', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'ItemsID' ]) }}
+</div>
+</div>
+
 
     @include('layout.messages')
 
@@ -44,9 +58,4 @@
   </div>
 </div>
   {!! Form::close() !!}
-
-
-
-
-
 @endsection
