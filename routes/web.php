@@ -16,7 +16,6 @@ Route::get('/Home', 'PageControll@getHome' );
 Route::get('/Branches', 'ControllerBranches@ViewList' );
 Route::post('/Branches/submit', 'ControllerBranches@Submit' );
 
-<<<<<<< HEAD
 
 //Purchase
 Route::get('/Purchase', function () {
@@ -28,7 +27,6 @@ Route::get('/Purchase-Payment','ControllerPurchasePayment@AddPurchasePayment');
 Route::get('/Purches-return', 'ControllerPurchaseReturn@AddPurchaseReturn');
 Route::get('/Purchase-Item','ControllerPurchaseItemList@AddPurchaseItem');
 
-=======
 //sales routes
 Route::get('/Sales', 'ControllerSales@AddSales' );
 Route::get('/Sales-list','ControllerSalesList@ViewList');
@@ -39,12 +37,15 @@ Route::get('/Sales-return','ControllerSalesReturn@ViewSalesReturn');
 
 Route::post('/ItemsMainGroup/submit', 'ControllerItemMainGroup@submit' );
 Route::get('/ItemsMainGroup', 'ControllerItemMainGroup@ViewList' );
-
 Route::post('/ItemsMainGroupJSON', 'ControllerItemMainGroup@ViewListJSON' );
+
 Route::get('/ItemsSubGroup', 'ControllerItemSubGroup@ViewList' );
 Route::post('/ItemsSubGroup/submit', 'ControllerItemSubGroup@submit' );
-<<<<<<< HEAD
-=======
+Route::post('/ItemsSubGroupJSONGet', 'ControllerItemSubGroup@ItemsSubGroupJSONGet' );
+Route::post('/ItemsSubGroupJSON', 'ControllerItemSubGroup@ViewListJSON' );
+
+Route::get('/Items', 'ControllerItems@ViewList' );
+Route::post('/Items/submit', 'ControllerItems@submit' );
+Route::post('/ItemsJSONGet', 'ControllerItems@ControllerItemsJSONGet' );
+
 // >>>>>>> 9a7260f14a7bd8e7c7d9ea57bb20d06d98be72d3
->>>>>>> 6006e7fa8ee42cb0ef10cc8f04606b0eed730009
->>>>>>> 9f0c429f992a1bcf3e72f1fcda507f60e40daf83

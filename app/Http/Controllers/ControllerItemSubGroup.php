@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\item_sub_groups;
+use Illuminate\Support\Facades\Input;
 
 class ControllerItemSubGroup extends Controller
 {
@@ -38,7 +39,7 @@ class ControllerItemSubGroup extends Controller
                   $this->validate( $request, [
                       'name' => 'required',
                       'IDBox' => 'required',
-                      'itemMainGroupID' => 'requeired'
+                      'itemMainGroupID' => 'required'
                   ]);
 
                   // create objecet for item_main_groups class
@@ -75,5 +76,15 @@ class ControllerItemSubGroup extends Controller
     {
       $item_main_groupsObj = item_sub_groups::all();
       return view('ItemSubGroup')->with( 'myList' , $item_main_groupsObj );
+    }
+
+    public function ItemsSubGroupJSONGet()
+    {
+      $id = $_POST['id'];
+      return response()->json(item_sub_groups::find($id));
+    }
+    public function ViewListJSON()
+    {
+      return response()->json(item_sub_groups::all());
     }
 }

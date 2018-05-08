@@ -39,8 +39,8 @@
 			<li class="nav-item {{Request::is('Purchase')? 'active' : '' }}">
 				<a class="nav-link" href="Purchase">Purchase</a>
 			</li>
-			<li class="nav-item {{Request::is('Purchase-Return')? 'active' : '' }}">
-				<a class="nav-link" href="{{url('/Purches-return')}}">Purchase Return</a>
+			<li class="nav-item {{Request::is('Purchase_Return')? 'active' : '' }}">
+				<a class="nav-link" href="Purchase_Return">Purchase Return</a>
 			</li>
 		</ul>
 		</div>

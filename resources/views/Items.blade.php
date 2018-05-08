@@ -2,21 +2,25 @@
 
 
 @section('subPageBody')
-{!! Form::open(['url' => 'ItemsSubGroup/submit', 'method' => 'POST']) !!}
+{!! Form::open(['url' => 'Items/submit', 'method' => 'POST']) !!}
 <div class="card" style="margin-bottom:50px;">
 <div class="card-header">
 Item Sub Group
 </div>
 <div class="card-body">
 
-{{ Form::text('name', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'Name' ]) }}
+  {{ Form::text('sortName', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'Sort Name' ]) }}
+  {{ Form::text('longName', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'Long Name' ]) }}
+  {{ Form::text('minQuantity', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'Min Quanity' ]) }}
+  {{ Form::text('maxQuantity', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'max Quanity' ]) }}
+  {{ Form::text('barcode', '', [ 'class' => 'form-control myFormControll', 'placeholder' => 'Barcode' ]) }}
 <div class="col-lg-12" style="padding:0px;">
 <div class="row" >
   <div class="col-lg-1">
-    {{ Form::text('itemMainGroupID', '', [ 'id' => 'itemMainGroupID', 'class' => 'form-control myFormControll', 'readonly']) }}
+    {{ Form::text('subGroupFK', '', [ 'class' => 'form-control myFormControll', 'readonly']) }}
   </div>
   <div class="col-lg-11">
-  {{ Form::text('itemMainGroupName', '', [ 'id' => 'itemMainGroupAutoComplete' , 'class' => 'form-control myFormControll', 'placeholder' => 'Branch Name'  ]) }}
+  {{ Form::text('subGroupFKName', '', [  'class' => 'form-control myFormControll', 'placeholder' => 'Branch Name'  ]) }}
   </div>
 </div>
 </div>
@@ -38,8 +42,12 @@ Item Sub Group
 <thead>
   <tr>
     <th>ID</th>
-    <th>Name</th>
-    <th>Main Group</th>
+    <th>SName</th>
+    <th>LName</th>
+    <th>Min</th>
+    <th>Max</th>
+    <th>Barcode</th>
+    <th>Sub Group</th>
   </tr>
 </thead>
 <tbody>
@@ -48,9 +56,13 @@ Item Sub Group
 
     @foreach($myList as $myRow )
     <tr>
-      <td>{{ $myRow->ItemSubGroupID }}</td>
-      <td>{{ $myRow->ItemSubGroupName }}</td>
-      <td>{{ $myRow->item_main_groups->ItemMainGroupName }}</td>
+      <td>{{ $myRow->ItemsID }}</td>
+      <td>{{ $myRow->ItemsShortName }}</td>
+      <td>{{ $myRow->ItemsLongName }}</td>
+      <td>{{ $myRow->ItemsMinQue }}</td>
+      <td>{{ $myRow->ItemsMaxQue }}</td>
+      <td>{{ $myRow->ItemsBarCode }}</td>
+      <td>{{ $myRow->item_sub_groups->ItemSubGroupName }}</td>
     </tr>
     @endforeach
 
@@ -73,7 +85,7 @@ $('#loadTable').DataTable();
 
       // get sub group info
       $.ajax({
-        url : "ItemsSubGroupJSONGet",
+        url : "ItemsJSONGet",
         type: 'POST',
         dataType :'JSON',
         data: {
@@ -83,8 +95,12 @@ $('#loadTable').DataTable();
         success: function( data ){
 
           // append data
-          $("input[name='name']").val(data.ItemSubGroupName);
-          $("input[name='itemMainGroupID']").val(data.ItemSubGroup_ItemMainGroup_FK);
+          $("input[name='sortName']").val(data.ItemsShortName);
+          $("input[name='longName']").val(data.ItemsLongName);
+          $("input[name='minQuantity']").val(data.ItemsMinQue);
+          $("input[name='maxQuantity']").val(data.ItemsMaxQue);
+          $("input[name='barcode']").val(data.ItemsBarCode);
+          $("input[name='subGroupFK']").val(data.Items_ItemsSubGroup_Fk);
 
 
         },
@@ -99,9 +115,9 @@ $('#loadTable').DataTable();
 
   });
 
-  // call main group list from ajax
+  // call sub group list from ajax
   $.ajax({
-    url : "ItemsMainGroupJSON",
+    url : "ItemsSubGroupJSON",
     type: 'POST',
     dataType :'JSON',
     data: {
@@ -122,14 +138,14 @@ var autoSource =[];
   function itemMainGroupAutoComplete( list ) {
 
     for (var i = 0; i < list.length; i++) {
-      autoSource.push( { key:list[i].ItemMainGroupID , value : list[i].ItemMainGroupName  } )
+      autoSource.push( { key:list[i].ItemSubGroupID , value : list[i].ItemSubGroupName  } )
     }
 
-    $('#itemMainGroupAutoComplete').autocomplete({
+    $('input[name="subGroupFKName"]').autocomplete({
       source : autoSource,
       select : function( event , ui ){
-        $('#itemMainGroupID').val( ui.item.key );
-        $('#itemMainGroupAutoComplete').val( ui.item.label  )
+        $("input[name='subGroupFK']").val( ui.item.key );
+        $('input[name="subGroupFKName"]').val( ui.item.label  )
       }
 
     })

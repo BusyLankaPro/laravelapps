@@ -44,7 +44,6 @@
   {{ Form::submit('Save' , [ 'class' => 'btn btn-primary','disabled']) }}
   {{ Form::submit('Update' , [ 'class' => 'btn btn-primary', 'disabled']) }}
   {{ Form::submit('Delete' , [ 'class' => 'btn btn-primary', 'disabled']) }}
-  {{ Form::text('IDBox', '', [ 'id'=> 'IDBox','class' => 'form-control mySelectedIDBox', 'readonly' ]) }}
   </div>
 </div>
   {!! Form::close() !!}
